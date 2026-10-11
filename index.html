@@ -401,6 +401,25 @@ h2 em{font-style:normal;color:var(--wine)}
 .case-p{margin:0;font-size:14px;color:#cfc9c1}
 @media (max-width:900px){.cases{grid-template-columns:1fr}}
 @media (max-width:420px){.nums{grid-template-columns:1fr}}
+.cases{grid-template-columns:repeat(3,1fr)}
+.ab2{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
+.ab2>div{border-radius:14px;border:1px solid var(--line);padding:14px;background:var(--ink)}
+.ab2>div.hot{border-color:rgba(184,53,77,.7);box-shadow:0 0 24px var(--glow);background:linear-gradient(170deg,#2a1219,#16101a)}
+.ab2 small{display:block;font:700 10.5px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.ab2 b{display:block;font-family:var(--f-disp);font-size:clamp(22px,2.4vw,30px);letter-spacing:-.04em;margin-top:4px;font-variant-numeric:tabular-nums}
+.ab2 .hot b{color:var(--pink)}
+.ab2>span{color:var(--wine);font-weight:800;font-size:20px}
+.case-link{margin-top:auto;align-self:flex-start;font:700 13px var(--f-mono);color:var(--bone);text-decoration:none;border-bottom:1px solid var(--wine);padding-bottom:2px}
+.case-link:hover{color:var(--pink)}
+.case.live{border-color:rgba(184,53,77,.55)}
+.badge-live{display:inline-block;font:700 10.5px var(--f-mono)!important;letter-spacing:.08em;text-transform:uppercase;color:#6fcf97!important;margin-bottom:6px}
+.case-h .badge-live{display:block}
+.miro{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:16px;border:1px dashed rgba(184,53,77,.55);border-radius:18px;padding:18px 22px;text-decoration:none;transition:background .3s}
+.miro:hover{background:rgba(184,53,77,.08)}
+.miro b{font-size:17px;font-weight:800}
+.miro span{font:700 13px var(--f-mono);color:var(--pink)}
+@media (max-width:1060px){.cases{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.cases{grid-template-columns:1fr}}
 /* котик-охранник на карточке */
 .guard{position:relative}
 .sleeper{position:absolute;z-index:6;width:46%;max-width:170px;right:6%;top:0;transform:translateY(-72%);pointer-events:none;transform-origin:50% 100%;animation:breathe 3.2s ease-in-out infinite;height:auto;aspect-ratio:360/172;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5));transition:opacity .4s}
@@ -568,37 +587,28 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap rv">
     <div class="eyebrow">Кейсы команды</div>
     <h2>Метод <em>уже работает</em></h2>
-    <p class="lead">Тот же подход: регулярные ролики без участия эксперта, форматы по данным и воронка в директ.</p>
+    <p class="lead">Тот же подход: регулярные ролики без участия эксперта, форматы по данным и воронка в директ. Аккаунты открыты, можно проверить.</p>
     <div class="cases">
+      <article class="case live">
+        <div class="case-h"><span class="badge-live">● в работе</span><b>Стоматология в Москве</b><span>наш проект, аккаунт с нуля</span></div>
+        <div class="ab2"><div><small>подписчиков на старте</small><b>123</b></div><span aria-hidden="true">→</span><div class="hot"><small>просмотров 7-го ролика</small><b>112 тыс.</b></div></div>
+        <div class="nums"><div><b>×900</b><span>просмотров к числу подписчиков</span></div><div><b>100%</b><span>ИИ-контент, без съёмок врача</span></div><div><b>7</b><span>роликов до первого вируса</span></div></div>
+        <a class="case-link" href="https://www.instagram.com/reels/DeU1SzEMMjh/" target="_blank" rel="noopener">Смотреть ролик в Instagram →</a>
+      </article>
       <article class="case">
         <div class="case-h"><b>Александр Русель</b><span>эксперт по финансам бизнеса</span></div>
-        <div class="ab">
-          <figure><img src="case-rus-a.jpg" alt="Профиль до: 6,3 тыс. подписчиков" loading="lazy"><figcaption>до</figcaption></figure>
-          <span class="arrow" aria-hidden="true">→</span>
-          <figure class="after"><img src="case-rus-b.jpg" alt="Профиль после: 57,5 тыс. подписчиков" loading="lazy"><figcaption>после</figcaption></figure>
-        </div>
-        <div class="nums">
-          <div><b>+60 000</b><span>лидов в воронке, по 0,07 $ за лид</span></div>
-          <div><b>+51 000</b><span>подписчиков</span></div>
-          <div><b>13 млн</b><span>органического охвата</span></div>
-        </div>
-        <p class="case-p">Было: контент выходил нерегулярно, съёмки и монтаж отнимали кучу времени. Стало: ролики выходят регулярно без его участия.</p>
+        <div class="ab2"><div><small>подписчиков было</small><b>6,3 тыс.</b></div><span aria-hidden="true">→</span><div class="hot"><small>стало</small><b>57,5 тыс.</b></div></div>
+        <div class="nums"><div><b>+60 000</b><span>лидов в воронке, по 0,07 $ за лид</span></div><div><b>13 млн</b><span>органического охвата</span></div><div><b>0 ч</b><span>его времени на съёмки</span></div></div>
+        <a class="case-link" href="https://www.instagram.com/rusel.aleksander/reels/" target="_blank" rel="noopener">Открыть аккаунт →</a>
       </article>
       <article class="case">
         <div class="case-h"><b>GARD</b><span>производственная компания</span></div>
-        <div class="ab">
-          <figure><img src="case-gard-a.jpg" alt="Профиль до: 43 тыс. подписчиков" loading="lazy"><figcaption>до</figcaption></figure>
-          <span class="arrow" aria-hidden="true">→</span>
-          <figure class="after"><img src="case-gard-b.jpg" alt="Профиль после: 70,8 тыс. подписчиков" loading="lazy"><figcaption>после</figcaption></figure>
-        </div>
-        <div class="nums">
-          <div><b>+1 000</b><span>лидов в воронке, по 1,25 $ за лид</span></div>
-          <div><b>4 млн</b><span>органического охвата</span></div>
-          <div><b>−7 ч</b><span>в неделю на съёмки у собственника</span></div>
-        </div>
-        <p class="case-p">Было: собственник хотел меньше сниматься, воронки не было, контент не давал стабильных заявок. Стало: аватар вместо съёмок и поток лидов.</p>
+        <div class="ab2"><div><small>подписчиков было</small><b>43 тыс.</b></div><span aria-hidden="true">→</span><div class="hot"><small>стало</small><b>70,8 тыс.</b></div></div>
+        <div class="nums"><div><b>+1 000</b><span>лидов в воронке, по 1,25 $ за лид</span></div><div><b>4 млн</b><span>органического охвата</span></div><div><b>−7 ч</b><span>в неделю на съёмки у собственника</span></div></div>
+        <a class="case-link" href="https://www.instagram.com/gard.by/reels/" target="_blank" rel="noopener">Открыть аккаунт →</a>
       </article>
     </div>
+    <a class="miro" href="https://miro.com/app/board/uXjVHm4oTTE=/" target="_blank" rel="noopener"><b>Весь процесс и кейсы по шагам</b><span>доска в Miro: от анализа до результата →</span></a>
   </div>
 </section>
 <div class="rib alt" aria-hidden="true"><div class="row">
