@@ -94,8 +94,8 @@ h2 em{font-style:normal;color:var(--wine)}
 .snd{position:absolute;z-index:5;right:16px;top:48px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;cursor:pointer;font-size:16px}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:18px}.phone{width:min(64vw,260px)}
   .hero .wrap>div:first-child{display:contents}
-  .hero .eyebrow{order:1}.hero h1{order:2;margin-top:0}.hero .wrap>div:last-child{order:3;margin-block:18px 10px}
-  .hero .lead{order:4;margin-top:6px}.hero .cta-row{order:5;margin-top:4px}.hero .facts{order:6;margin-top:18px}
+  .hero .eyebrow{order:1}.hero h1{order:2;margin-top:0}.hero .cta-row{order:3;margin-top:4px}.hero .wrap>div:last-child{order:4;margin-block:18px 10px}
+  .hero .lead{order:5;margin-top:6px}.hero .facts{order:6;margin-top:18px}
   .tag{font-size:9px;padding:5px 8px}.tag i{width:5px;height:5px;margin-right:5px}
   .tag.t1{left:8px;top:-12px}.tag.t2{right:8px;bottom:-12px}}
 
@@ -189,7 +189,6 @@ h2 em{font-style:normal;color:var(--wine)}
 .b .v{font:700 15px var(--f-mono);font-variant-numeric:tabular-nums}
 .b.hot .v{color:var(--pink)}
 .b.hot{position:relative}
-.climber{position:absolute;right:85%;bottom:calc(var(--cy,0)*34%);width:clamp(52px,6.5vw,72px);-webkit-mask:linear-gradient(90deg,transparent 0,#000 12%,#000 90%,transparent 100%),linear-gradient(0deg,transparent 0,#000 6%,#000 94%,transparent 100%);-webkit-mask-composite:source-in;mask:linear-gradient(90deg,transparent 0,#000 12%,#000 90%,transparent 100%),linear-gradient(0deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask-composite:intersect;mix-blend-mode:screen;pointer-events:none;transition:bottom .25s linear}
 .snd-fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid rgba(184,53,77,.6);background:rgba(18,17,20,.88);backdrop-filter:blur(8px);color:var(--bone);font:700 12px var(--f-mono);cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.5)}
 .snd-fab.on{background:var(--wine);color:#fff}
 .lbls{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:10px;font-size:12px;color:var(--mute);text-align:center}
@@ -278,6 +277,12 @@ h2 em{font-style:normal;color:var(--wine)}
 .note{font-size:12px;color:var(--mute);margin-top:18px}
 .pc .sub{font-size:13px;color:var(--pink);margin-top:4px;font-weight:600}
 .pc:not(.best){opacity:.92}
+.terms{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.terms div{border:1px solid var(--line);border-radius:16px;padding:14px 18px;background:rgba(255,255,255,.025)}
+.terms b{display:block;font-size:15px;font-weight:800}
+.terms span{display:block;font-size:13.5px;color:var(--mute);margin-top:3px}
+@media (max-width:760px){.terms{grid-template-columns:1fr}}
+.hi{display:inline-block;margin-bottom:14px;font-weight:700;font-size:15px;color:var(--bone);background:rgba(184,53,77,.16);border:1px solid rgba(184,53,77,.5);border-radius:999px;padding:7px 14px}
 .extra{margin-top:48px;max-width:640px;border-top:1px solid var(--line);padding-top:22px}
 .extra-h{font:700 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
 .ex-row{display:flex;align-items:baseline;gap:10px;padding:9px 0;font-size:15px;color:#d8d2ca}
@@ -298,14 +303,16 @@ h2 em{font-style:normal;color:var(--wine)}
 .tg{display:inline-flex;gap:10px;align-items:center;margin-top:22px;font:700 15px var(--f-mono);color:var(--mute)}
 .tg b{color:var(--bone);user-select:all}
 /* чиню сверху */
-.fixes{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:36px}
-.fx{border:1px solid var(--line);border-radius:16px;padding:20px 18px;background:rgba(255,255,255,.025);min-width:0;transition:border-color .3s,transform .3s}
+.fix-h{margin-top:48px;font-size:17px;color:var(--mute);max-width:70ch}
+.fix-h b{color:var(--bone)}
+.fixes{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px}
+.fx{border:1px solid var(--line);border-radius:16px;padding:16px 16px;background:rgba(255,255,255,.025);min-width:0;transition:border-color .3s,transform .3s}
 .fx:hover{border-color:rgba(184,53,77,.55);transform:translateY(-4px)}
 .fx b{display:block;font-size:16px;font-weight:800;letter-spacing:-.01em}
 .fx b::before{content:"✓";display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(184,53,77,.18);color:var(--pink);font-size:12px;margin-right:8px;vertical-align:1px}
 .fx p{font-size:14px;color:var(--mute);margin:8px 0 0}
 @media (max-width:980px){.fixes{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.fixes{grid-template-columns:1fr}}
+@media (max-width:520px){.fixes{grid-template-columns:1fr 1fr;gap:8px}.fx{padding:12px}.fx b{font-size:14px}.fx p{font-size:13px}}
 /* калькулятор */
 .calc{display:grid;grid-template-columns:1fr 1.1fr;gap:20px;margin-top:36px}
 .cin,.cout{border:1px solid var(--line);border-radius:22px;padding:26px;background:var(--ink2);min-width:0}
@@ -418,6 +425,19 @@ h2 em{font-style:normal;color:var(--wine)}
 .miro:hover{background:rgba(184,53,77,.08)}
 .miro b{font-size:17px;font-weight:800}
 .miro span{font:700 13px var(--f-mono);color:var(--pink)}
+.cases{grid-template-columns:1fr 1fr}
+.shot{margin:0;position:relative;border-radius:14px;overflow:hidden;background:#fff;border:1px solid rgba(184,53,77,.55);box-shadow:0 0 24px var(--glow);cursor:zoom-in}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{position:absolute;right:8px;bottom:8px;font:700 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;background:var(--wine);color:#fff;padding:4px 9px;border-radius:999px}
+.reel{display:block;text-decoration:none;border-radius:16px;padding:16px 18px;background:linear-gradient(160deg,#2a1219,#16101a 70%);border:1px solid rgba(184,53,77,.55);box-shadow:0 0 24px var(--glow);transition:transform .3s}
+.reel:hover{transform:translateY(-3px)}
+.reel-top{display:flex;align-items:center;gap:10px}
+.reel-top .ava{flex:0 0 36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bone);font-size:18px;box-shadow:0 0 0 2px #16101a,0 0 0 4px var(--wine)}
+.reel-top b{display:block;font-size:14px}
+.reel-top i{display:block;font-style:normal;font-size:12px;color:var(--mute)}
+.reel p{margin:12px 0 0;font-size:15px;font-weight:600;color:var(--bone)}
+.reel-st{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font:700 14px var(--f-mono);color:var(--mute)}
+.reel-st span:first-child{color:var(--pink);font-size:18px}
 @media (max-width:1060px){.cases{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.cases{grid-template-columns:1fr}}
 /* котик-охранник на карточке */
@@ -473,7 +493,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <header class="nav">
   <div class="wrap">
     <a class="logo" href="#top">Nech<span>AI</span></a>
-    <nav aria-label="Разделы"><a href="#how">Как работаю</a><a href="#calc">Окупаемость</a><a href="#cases">Кейсы</a><a href="#work">Что делаю</a><a href="#price">Тарифы</a></nav>
+    <nav aria-label="Разделы"><a href="#cases">Кейсы</a><a href="#work">Форматы</a><a href="#how">Как работаю</a><a href="#price">Тарифы</a><a href="#calc">Окупаемость</a><a href="#faq">Вопросы</a></nav>
     <a class="btn sm" href="https://t.me/byenech" target="_blank" rel="noopener">Telegram</a>
   </div>
   <div class="prog" id="prog"></div>
@@ -483,15 +503,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section class="hero" id="hero" data-bg="#121114">
   <div class="wrap">
     <div>
-      <div class="eyebrow"><b>●</b> ИИ-аватары и ролики под ключ</div>
+      <div class="hi" id="hi" hidden></div>
+      <div class="eyebrow"><b>●</b> ИИ-аватары и ролики под ключ · для экспертов, риелторов и клиник</div>
       <h1>
         <span class="ln"><span>Ваш двойник</span></span>
         <span class="ln"><span>уже <em>на&nbsp;работе.</em></span></span>
       </h1>
-      <p class="lead">Ролики, которые приводят обращения, а не просто просмотры. Вы снимаетесь один раз, дальше каждую неделю выходят ролики с вашим лицом и голосом. Я отвечаю за показатели: форматы, регулярность и воронку в директ.</p>
+      <p class="lead">Ролики, которые приводят обращения, а не просто просмотры. Вы снимаетесь один раз, дальше каждую неделю выходят ролики с вашим лицом и голосом. Всё веду сам: форматы, сценарии, выдачу каждую неделю и воронку в директ.</p>
       <div class="cta-row">
-        <a class="btn" href="#price">Смотреть тарифы <span aria-hidden="true">→</span></a>
-        <a class="btn ghost" href="#work">Что делаю</a>
+        <a class="btn" href="#contact">Бесплатный разбор аккаунта <span aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="#price">Смотреть тарифы</a>
       </div>
       <div class="facts">
         <div class="fact"><b>1 раз</b><span>съёмка исходника</span></div>
@@ -508,7 +529,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <button class="snd" id="snd" type="button" aria-label="Включить звук">🔇</button>
         </div>
       </div>
-      <div class="tag t1"><i></i>ИИ-аватар · стоматология</div>
+      <div class="tag t1"><i></i>ролик клиента · стоматология</div>
       <div class="tag t2">снято: 1 раз</div>
     </div>
   </div>
@@ -528,7 +549,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div>
       <div class="eyebrow">Кто делает</div>
       <h2>Алексей, <em>NechAI</em></h2>
-      <p class="lead">Собираю ИИ-аватары и ролики под ключ для экспертов и бизнеса. Работаю с вами напрямую: без менеджеров и испорченного телефона, сценарии и отчёты присылаю сам.</p>
+      <p class="lead">Собираю ИИ-аватары и ролики под ключ для экспертов и бизнеса. Общаюсь с вами напрямую, без менеджеров и испорченного телефона: сценарии и отчёты присылаю сам.</p>
       <ul class="crit">
         <li>Форматы выбираю по данным: аналитика вирусных роликов в вашей нише</li>
         <li>Аватар и клон голоса делаю на профессиональных тарифах сервисов</li>
@@ -538,222 +559,46 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
-<section id="how" data-bg="#17121a">
-  <div class="wrap rv">
-    <div class="eyebrow">Как работаю</div>
-    <h2>Путь ролика: от <em>чужого вируса</em> до заявки в директе</h2>
-    <div class="track" id="track">
-      <div class="steps">
-        <div class="step"><div class="n">01</div><div class="viz v1"><i></i><i></i><i></i><i class="hot"></i><i></i><i></i><b>×6,3</b></div><h3>Анализ</h3><p>Ваш аккаунт и 10–15 конкурентов в нише и смежных</p></div>
-        <div class="step"><div class="n">02</div><div class="viz v2"><i></i><i></i><i></i></div><h3>Сценарии</h3><p>Тот же хук и структура, что у вируса, ваша тема. Присылаю на согласование</p></div>
-        <div class="step"><div class="n">03</div><div class="viz v3"><div class="ring"></div><div class="face"></div><div class="wave"><i></i><i></i><i></i><i></i></div></div><h3>Аватар и голос</h3><p>Один раз по исходнику 2–3 минуты, без студии</p></div>
-        <div class="step"><div class="n">04</div><div class="viz v4"><div class="tl"><i></i><i></i><i></i><i></i><i></i></div><div class="tl t2"><i></i><i style="margin-left:20%"></i></div><div class="head"></div></div><h3>Монтаж</h3><p>Хук в первую секунду, перебивки, субтитры</p></div>
-        <div class="step"><div class="n">05</div><div class="viz v5"><span class="bub">«хочу»</span><span class="arr">→</span><span class="bub dm">директ ✓</span></div><h3>Воронка</h3><p>Слово в комментарии → автоответ в директ с лид-магнитом</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="calc" data-bg="#1a0f14">
-  <div class="wrap rv">
-    <div class="eyebrow">Окупаемость</div>
-    <h2>Посчитайте, сколько обращений <em>окупят работу</em></h2>
-    <p class="lead">Без обещаний и «гарантий дохода». Подставьте свои цифры и решите сами, реально ли это для вас.</p>
-    <div class="calc">
-      <div class="cin">
-        <label for="cIncome">Ваш доход с одной сделки, ₽</label>
-        <input id="cIncome" type="number" inputmode="numeric" min="1000" step="1000" value="150000">
-        <label for="cLeads">Сколько обращений уходит на одну сделку</label>
-        <input id="cLeads" type="number" inputmode="numeric" min="1" step="1" value="10">
-        <label for="cPlan">Тариф</label>
-        <select id="cPlan">
-          <option value="30000|7 роликов">Старт · 30 000 ₽ · 7 роликов</option>
-          <option value="85000|25 роликов" selected>Поток · 85 000 ₽ · 25 роликов в месяц</option>
-          <option value="120000|30 роликов">Макс · 120 000 ₽ · 30 роликов в месяц</option>
-        </select>
-      </div>
-      <div class="cout" aria-live="polite">
-        <div class="cbig"><b id="cDeals">1</b><span>сделка окупает работу</span></div>
-        <div class="cbig"><b id="cNeed">10</b><span>обращений для этого нужно</span></div>
-        <p class="cq" id="cText">Если с <b>25 роликов</b> придёт <b>10 обращений</b>, работа окупится. Это реально для вашей ниши?</p>
-        <a class="btn" id="cCall" href="https://t.me/byenech" target="_blank" rel="noopener">Посчитать точно на созвоне →</a>
-        <p class="cnote">Это обратный расчёт, а не прогноз. На созвоне сверим с вашими цифрами: откуда сейчас клиенты, сколько обращений, какой чек.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="cases" data-bg="#121114">
   <div class="wrap rv">
-    <div class="eyebrow">Кейсы команды</div>
+    <div class="eyebrow">Кейсы</div>
     <h2>Метод <em>уже работает</em></h2>
-    <p class="lead">Тот же подход: регулярные ролики без участия эксперта, форматы по данным и воронка в директ. Аккаунты открыты, можно проверить.</p>
+    <p class="lead">Регулярные ролики без участия эксперта, форматы по данным и воронка в директ. Аккаунты открыты, можно проверить.</p>
     <div class="cases">
       <article class="case live">
-        <div class="case-h"><span class="badge-live">● в работе</span><b>Стоматология в Москве</b><span>наш проект, аккаунт с нуля</span></div>
-        <div class="ab2"><div><small>подписчиков на старте</small><b>123</b></div><span aria-hidden="true">→</span><div class="hot"><small>просмотров 7-го ролика</small><b>112 тыс.</b></div></div>
-        <div class="nums"><div><b>×900</b><span>просмотров к числу подписчиков</span></div><div><b>100%</b><span>ИИ-контент, без съёмок врача</span></div><div><b>7</b><span>роликов до первого вируса</span></div></div>
+        <div class="case-h"><span class="badge-live">● в работе</span><b>Стоматология в Москве</b><span>аккаунт с нуля, старт в октябре, сейчас тест форматов. Ролик с первого экрана отсюда</span></div>
+        <a class="reel" href="https://www.instagram.com/reels/DeU1SzEMMjh/" target="_blank" rel="noopener">
+          <div class="reel-top"><span class="ava" aria-hidden="true">🦷</span><span><b>dr.preobrazhensky.ru</b><i>Reels · 7-й ролик аккаунта</i></span></div>
+          <p>«Зуб мудрости лежит боком и стачивает соседний — как его удаляют?»</p>
+          <div class="reel-st"><span>▶ 112 тыс.</span><span>♥ 512</span><span>💬 11</span></div>
+        </a>
+        <div class="ab2"><div><small>подписчиков на старте</small><b>0</b></div><span aria-hidden="true">→</span><div class="hot"><small>просмотров 7-го ролика</small><b>112 тыс.</b></div></div>
+        <div class="nums"><div><b>×900</b><span>просмотров к подписчикам: их было 123</span></div><div><b>100%</b><span>ИИ-контент, без съёмок врача</span></div><div><b>7</b><span>роликов до первого вируса</span></div></div>
         <a class="case-link" href="https://www.instagram.com/reels/DeU1SzEMMjh/" target="_blank" rel="noopener">Смотреть ролик в Instagram →</a>
       </article>
       <article class="case">
         <div class="case-h"><b>Александр Русель</b><span>эксперт по финансам бизнеса</span></div>
+        <figure class="shot"><img src="miro-rus-b.png" width="954" height="295" loading="lazy" alt="Профиль rusel.aleksander: 57,3 тыс. подписчиков"><figcaption>профиль после</figcaption></figure>
         <div class="ab2"><div><small>подписчиков было</small><b>6,3 тыс.</b></div><span aria-hidden="true">→</span><div class="hot"><small>стало</small><b>57,3 тыс.</b></div></div>
         <div class="nums"><div><b>+60 000</b><span>лидов в воронке, по 0,07 $ за лид</span></div><div><b>13 млн</b><span>органического охвата</span></div><div><b>0 ч</b><span>его времени на съёмки</span></div></div>
         <a class="case-link" href="https://www.instagram.com/rusel.aleksander/reels/" target="_blank" rel="noopener">Открыть аккаунт →</a>
       </article>
       <article class="case">
         <div class="case-h"><b>GARD</b><span>производственная компания</span></div>
+        <figure class="shot"><img src="miro-gard-b.png" width="990" height="346" loading="lazy" alt="Профиль gard.by: 70,8 тыс. подписчиков"><figcaption>профиль после</figcaption></figure>
         <div class="ab2"><div><small>подписчиков было</small><b>43 тыс.</b></div><span aria-hidden="true">→</span><div class="hot"><small>стало</small><b>70,8 тыс.</b></div></div>
         <div class="nums"><div><b>+1 000</b><span>лидов в воронке, по 1,25 $ за лид</span></div><div><b>4 млн</b><span>органического охвата</span></div><div><b>−7 ч</b><span>в неделю на съёмки у собственника</span></div></div>
         <a class="case-link" href="https://www.instagram.com/gard.by/reels/" target="_blank" rel="noopener">Открыть аккаунт →</a>
       </article>
+      <article class="case">
+        <div class="case-h"><b>TigerTime</b><span>часы и брендовые аксессуары</span></div>
+        <figure class="shot"><img src="miro-watch-b.png" width="1080" height="288" loading="lazy" alt="Профиль tigertime_premium: 17,4 тыс. подписчиков"><figcaption>профиль после</figcaption></figure>
+        <div class="ab2"><div><small>подписчиков было</small><b>8,2 тыс.</b></div><span aria-hidden="true">→</span><div class="hot"><small>стало</small><b>17,4 тыс.</b></div></div>
+        <div class="nums"><div><b>+3 500</b><span>лидов в воронке, по 0,91 $ за лид</span></div><div><b>2,2 млн</b><span>органического охвата</span></div><div><b>−6 ч</b><span>в неделю на съёмки у собственника</span></div></div>
+        <a class="case-link" href="https://www.instagram.com/tigertime_premium/" target="_blank" rel="noopener">Открыть аккаунт →</a>
+      </article>
     </div>
     <a class="miro" href="https://miro.com/app/board/uXjVEb5BFtw=/" target="_blank" rel="noopener"><b>Весь процесс и кейсы по шагам</b><span>доска в Miro: от анализа до результата →</span></a>
-  </div>
-</section>
-<div class="rib alt" aria-hidden="true"><div class="row">
-  <span>Цены октября</span><span>Скидка до 31.10</span><span>+5 роликов при оплате сразу</span><span>Цены октября</span><span>Скидка до 31.10</span><span>+5 роликов при оплате сразу</span>
-  <span>Цены октября</span><span>Скидка до 31.10</span><span>+5 роликов при оплате сразу</span><span>Цены октября</span><span>Скидка до 31.10</span><span>+5 роликов при оплате сразу</span>
-</div></div>
-
-<section id="price" data-bg="#1a0f14">
-  <div class="wrap rv">
-    <div class="eyebrow">Тарифы</div>
-    <h2>Месяц роликов <em>без единой съёмки</em></h2>
-    <div class="deadline"><i></i>цены октября действуют до 31.10</div>
-    <div class="prices">
-      <div class="pc">
-        <div class="k">Старт</div>
-        <div class="what">7 роликов · тест</div>
-        <div class="old">590 $</div>
-        <div class="sum">350 $</div>
-        <div class="loc">≈ 30 000 ₽ · ≈ 1 040 BYN</div>
-        <ul><li>Анализ ниши и доноров</li><li>Аватар и клон голоса</li><li>Сценарии на согласование</li><li>Монтаж 7 роликов</li></ul>
-        <div class="per">срок <b>14 дней</b> · засчитывается в «Поток»</div>
-      </div>
-      <div class="pc best">
-        <span class="hit">ВЫБИРАЮТ</span>
-        <div class="k">Поток</div>
-        <div class="what">25 роликов в месяц</div>
-        <div class="sub">ролики идут потоком: по 6 каждую неделю</div>
-        <div class="old">1 300 $</div>
-        <div class="sum">1 000 $</div>
-        <div class="loc">≈ 85 000 ₽ · ≈ 2 970 BYN</div>
-        <div class="bonus">+5 роликов при оплате месяца сразу</div>
-        <ul><li>Всё из «Старта»</li><li>Монтаж пачками по 6 роликов в неделю</li><li>Автоворонка: кодовое слово → директ</li><li>Контент готов к выкладке, публикуете вы</li></ul>
-        <div class="per">выдача <b>каждую неделю</b></div>
-      </div>
-      <div class="pc">
-        <div class="k">Макс</div>
-        <div class="what">30 роликов в месяц</div>
-        <div class="old">1 800 $</div>
-        <div class="sum">1 400 $</div>
-        <div class="loc">≈ 120 000 ₽ · ≈ 4 160 BYN</div>
-        <ul><li>Всё из «Потока»</li><li>8 каруселей в месяц</li><li>Сценарии сторис на неделю</li><li>Оформление профиля под воронку</li></ul>
-        <div class="per">ролики <b>+ карусели + сторис</b></div>
-      </div>
-    </div>
-    <p class="note">Рубли и белорусские рубли указаны примерно, по курсу на октябрь 2026. Оплата в удобной валюте.</p>
-    <div class="extra">
-      <div class="extra-h">Отдельные услуги</div>
-      <div class="ex-row"><span>ИИ-аватар + клон голоса</span><i></i><b>200 $</b></div>
-      <div class="ex-row"><span>Генерация фотосессии</span><i></i><b>от 100 $</b></div>
-      <div class="ex-row"><span>Ролик-генерация: реклама, объект по фото</span><i></i><b>от 60 $</b></div>
-      <div class="ex-row"><span>Сценарий + монтаж из ваших исходников</span><i></i><b>по задаче</b></div>
-    </div>
-  </div>
-</section>
-
-<section id="go" data-bg="#1a0f14" style="padding-top:0">
-  <div class="wrap rv go">
-    <b>Готовы обсудить?</b>
-    <div class="cta-row" style="margin-top:0">
-      <a class="btn" href="https://t.me/byenech?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%BE%D0%B7%D0%B2%D0%BE%D0%BD%20%D0%BD%D0%B0%2015%20%D0%BC%D0%B8%D0%BD%D1%83%D1%82" target="_blank" rel="noopener">Записаться на созвон →</a>
-      <a class="btn ghost" href="#contact">Сначала разбор аккаунта</a>
-    </div>
-  </div>
-</section>
-
-<section id="fix" data-bg="#17121a">
-  <div class="wrap rv">
-    <div class="eyebrow">Сверху роликов</div>
-    <h2>Чиню то, что <em>теряет заявки</em></h2>
-    <p class="lead">Ролик приводит человека в профиль. Дальше он либо пишет, либо уходит. Поэтому вместе с роликами настраиваю путь до сообщения.</p>
-    <div class="fixes">
-      <div class="fx"><b>Шапка профиля</b><p>Сразу понятно: кто вы, где работаете, чем полезны и куда писать.</p></div>
-      <div class="fx"><b>Кодовое слово</b><p>Комментарий со словом → автоответ в директ. Обращения считаются сами.</p></div>
-      <div class="fx"><b>Лид-магнит</b><p>Чек-лист, подборка или гайд в обмен на сообщение. Повод написать прямо сейчас.</p></div>
-      <div class="fx"><b>Закрепы и отзывы</b><p>Сделки, отзывы, ответы на частые вопросы в закрепах и хайлайтах.</p></div>
-      <div class="fx"><b>Призыв в каждом ролике</b><p>Каждый ролик заканчивается действием, а не «спасибо за внимание».</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="rib alt" aria-hidden="true"><div class="row">
-  <span>Формат важнее темы</span><span>Прострел ×3 к среднему</span><span>Только говорящая голова</span><span>Доноры из смежных ниш</span>
-  <span>Формат важнее темы</span><span>Прострел ×3 к среднему</span><span>Только говорящая голова</span><span>Доноры из смежных ниш</span>
-</div></div>
-
-<section id="proof" data-bg="#121114">
-  <div class="wrap proof rv">
-    <div>
-      <div class="eyebrow">Почему это работает</div>
-      <h2>Беру формат, который <em>уже доказал</em> себя</h2>
-      <p class="lead">Темы угадывать не нужно. Ищу ролики, которые набрали в разы больше обычного для своего же автора. Значит, сработал формат, а не охват блогера.</p>
-      <ul class="crit">
-        <li>Конкуренты от 5 тыс. подписчиков, от 3 роликов в неделю</li>
-        <li>Прострел: ролик ×3 и больше к среднему аккаунта</li>
-        <li>Только форматы с говорящей головой, чтобы ложились на аватара</li>
-      </ul>
-    </div>
-    <div class="chart" aria-label="Пример: средние просмотры аккаунта 3,5 млн, ролик-прострел 22,4 млн, множитель 6,3">
-      <div class="hd"><b>@goar_avetisyan</b><span>пример из отбора доноров, сентябрь 2026</span></div>
-      <div class="bars">
-        <div class="b"><span class="v">3,5 млн</span><div class="col" style="height:15.6%"></div></div>
-        <div class="b hot"><span class="v">22,4 млн</span><div class="col" style="height:100%"></div><video class="climber" id="climber" src="cat-climb.mp4" poster="cat-climb.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
-      </div>
-      <div class="lbls"><span>средний ролик</span><span>«Счастливы вместе»</span></div>
-      <div class="mult"><b>×6,3</b><span>к своему среднему. Такой ролик идёт в доноры, обычный нет.</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="plan" data-bg="#121114">
-  <div class="wrap rv">
-    <div class="eyebrow">План и контроль</div>
-    <h2>Не «посты ради постов», а <em>точки контроля</em></h2>
-    <div class="tline">
-      <div class="tp-i"><span>День 0</span><b>Аватар и голос готовы</b><p>Отсчёт начинается отсюда, а не с оплаты.</p></div>
-      <div class="tp-i"><span>1 неделя</span><b>Первые 6 роликов</b><p>Разные форматы, смотрим первый отклик.</p></div>
-      <div class="tp-i"><span>1 месяц</span><b>Видно, что заходит</b><p>Усиливаем рабочие форматы и пробуем новые, которые залетают у других прямо сейчас.</p></div>
-      <div class="tp-i"><span>2 месяц</span><b>Упор на обращения</b><p>Кодовое слово, лид-магнит, призывы.</p></div>
-      <div class="tp-i"><span>3 месяц</span><b>Сверка с расчётом</b><p>Сравниваем обращения с окупаемостью, решаем вместе.</p></div>
-    </div>
-    <div class="promise">
-      <div><b>Отчёт раз в 2 недели</b><p>Просмотры, сохранения, обращения по кодовому слову.</p></div>
-      <div><b>Не растёт к 10-му ролику</b><p>Меняю форматы и сценарии без доплаты.</p></div>
-      <div><b>Всё остаётся у вас</b><p>Аватар, голос, сценарии и воронка.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="vs" data-bg="#17121a">
-  <div class="wrap rv">
-    <div class="eyebrow">С чем сравнить</div>
-    <h2>Почему не реклама и <em>не съёмки каждую неделю</em></h2>
-    <div class="vs-wrap">
-      <table class="vs">
-        <thead><tr><th></th><th>Реклама</th><th>SMM и съёмки</th><th class="me">Ролики с аватаром</th></tr></thead>
-        <tbody>
-          <tr><td>Ваше время</td><td>почти не нужно</td><td>съёмка каждую неделю</td><td class="me">2–3 минуты один раз</td></tr>
-          <tr><td>Когда платите</td><td>пока показывают</td><td>каждый месяц</td><td class="me">каждый месяц</td></tr>
-          <tr><td>Бюджет кончился</td><td>заявки встали</td><td>контент остаётся</td><td class="me">ролики продолжают набирать</td></tr>
-          <tr><td>Через пару месяцев</td><td>о вас не вспомнят</td><td>пишут те, кто видел ролики</td><td class="me">пишут те, кто смотрел вас месяцами</td></tr>
-          <tr><td>Доверие к вам</td><td>не растёт</td><td>растёт</td><td class="me">растёт: лицо и голос ваши</td></tr>
-          <tr><td>Форматы</td><td>—</td><td>на вкус подрядчика</td><td class="me">по роликам, которые уже залетели</td></tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 </section>
 
@@ -809,6 +654,196 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
+<section id="how" data-bg="#17121a">
+  <div class="wrap rv">
+    <div class="eyebrow">Как работаю</div>
+    <h2>Путь ролика: от <em>чужого вируса</em> до заявки в директе</h2>
+    <div class="track" id="track">
+      <div class="steps">
+        <div class="step"><div class="n">01</div><div class="viz v1"><i></i><i></i><i></i><i class="hot"></i><i></i><i></i><b>×6,3</b></div><h3>Анализ</h3><p>Ваш аккаунт и 10–15 конкурентов в нише и смежных</p></div>
+        <div class="step"><div class="n">02</div><div class="viz v2"><i></i><i></i><i></i></div><h3>Сценарии</h3><p>Тот же хук и структура, что у вируса, ваша тема. Присылаю на согласование</p></div>
+        <div class="step"><div class="n">03</div><div class="viz v3"><div class="ring"></div><div class="face"></div><div class="wave"><i></i><i></i><i></i><i></i></div></div><h3>Аватар и голос</h3><p>Один раз по исходнику 2–3 минуты, без студии</p></div>
+        <div class="step"><div class="n">04</div><div class="viz v4"><div class="tl"><i></i><i></i><i></i><i></i><i></i></div><div class="tl t2"><i></i><i style="margin-left:20%"></i></div><div class="head"></div></div><h3>Монтаж</h3><p>Хук в первую секунду, перебивки, субтитры</p></div>
+        <div class="step"><div class="n">05</div><div class="viz v5"><span class="bub">«хочу»</span><span class="arr">→</span><span class="bub dm">директ ✓</span></div><h3>Воронка</h3><p>Слово в комментарии → автоответ в директ с лид-магнитом</p></div>
+      </div>
+    </div>
+    <div class="fix-h"><b>И чиню то, что теряет заявки.</b> Ролик приводит человека в профиль, дальше он либо пишет, либо уходит:</div>
+    <div class="fixes">
+      <div class="fx"><b>Шапка профиля</b><p>Кто вы, чем полезны и куда писать.</p></div>
+      <div class="fx"><b>Кодовое слово</b><p>Комментарий → автоответ в директ.</p></div>
+      <div class="fx"><b>Лид-магнит</b><p>Повод написать прямо сейчас.</p></div>
+      <div class="fx"><b>Закрепы и отзывы</b><p>Сделки и ответы на частые вопросы.</p></div>
+      <div class="fx"><b>Призыв в ролике</b><p>Каждый заканчивается действием.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="rib alt" aria-hidden="true"><div class="row">
+  <span>Формат важнее темы</span><span>Прострел ×3 к среднему</span><span>Только говорящая голова</span><span>Доноры из смежных ниш</span>
+  <span>Формат важнее темы</span><span>Прострел ×3 к среднему</span><span>Только говорящая голова</span><span>Доноры из смежных ниш</span>
+</div></div>
+
+<section id="proof" data-bg="#121114">
+  <div class="wrap proof rv">
+    <div>
+      <div class="eyebrow">Почему это работает</div>
+      <h2>Беру формат, который <em>уже доказал</em> себя</h2>
+      <p class="lead">Темы угадывать не нужно. Ищу ролики, которые набрали в разы больше обычного для своего же автора. Значит, сработал формат, а не охват блогера.</p>
+      <ul class="crit">
+        <li>Конкуренты от 5 тыс. подписчиков, от 3 роликов в неделю</li>
+        <li>Прострел: ролик ×3 и больше к среднему аккаунта</li>
+        <li>Только форматы с говорящей головой, чтобы ложились на аватара</li>
+      </ul>
+    </div>
+    <div class="chart" aria-label="Пример: средние просмотры аккаунта 3,5 млн, ролик-прострел 22,4 млн, множитель 6,3">
+      <div class="hd"><b>@goar_avetisyan</b><span>пример из отбора доноров, сентябрь 2026</span></div>
+      <div class="bars">
+        <div class="b"><span class="v">3,5 млн</span><div class="col" style="height:15.6%"></div></div>
+        <div class="b hot"><span class="v">22,4 млн</span><div class="col" style="height:100%"></div></div>
+      </div>
+      <div class="lbls"><span>средний ролик</span><span>«Счастливы вместе»</span></div>
+      <div class="mult"><b>×6,3</b><span>к своему среднему. Такой ролик идёт в доноры, обычный нет.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="plan" data-bg="#121114">
+  <div class="wrap rv">
+    <div class="eyebrow">План и контроль</div>
+    <h2>Не «посты ради постов», а <em>точки контроля</em></h2>
+    <div class="tline">
+      <div class="tp-i"><span>День 0</span><b>Аватар и голос готовы</b><p>Отсчёт начинается отсюда, а не с оплаты.</p></div>
+      <div class="tp-i"><span>1 неделя</span><b>Первые 6 роликов</b><p>Разные форматы, смотрим первый отклик.</p></div>
+      <div class="tp-i"><span>1 месяц</span><b>Видно, что заходит</b><p>Усиливаем рабочие форматы и пробуем новые, которые залетают у других прямо сейчас.</p></div>
+      <div class="tp-i"><span>2 месяц</span><b>Упор на обращения</b><p>Кодовое слово, лид-магнит, призывы.</p></div>
+      <div class="tp-i"><span>3 месяц</span><b>Сверка с расчётом</b><p>Сравниваем обращения с окупаемостью, решаем вместе.</p></div>
+    </div>
+    <div class="promise">
+      <div><b>Отчёт раз в 2 недели</b><p>Просмотры, сохранения, обращения по кодовому слову.</p></div>
+      <div><b>Не растёт к 10-му ролику</b><p>Меняю форматы и сценарии без доплаты.</p></div>
+      <div><b>Всё остаётся у вас</b><p>Ролики, сценарии и воронка. Аватар и голос тоже, как это устроено, в вопросах ниже.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="vs" data-bg="#17121a">
+  <div class="wrap rv">
+    <div class="eyebrow">С чем сравнить</div>
+    <h2>Почему не реклама и <em>не съёмки каждую неделю</em></h2>
+    <div class="vs-wrap">
+      <table class="vs">
+        <thead><tr><th></th><th>Реклама</th><th>SMM и съёмки</th><th class="me">Ролики с аватаром</th></tr></thead>
+        <tbody>
+          <tr><td>Ваше время</td><td>почти не нужно</td><td>съёмка каждую неделю</td><td class="me">2–3 минуты один раз</td></tr>
+          <tr><td>Цена ролика</td><td>платите за показы, а не за ролики</td><td>съёмочный день + монтаж</td><td class="me">от 33 $ в «Потоке»</td></tr>
+          <tr><td>Бюджет кончился</td><td>заявки встали</td><td>контент остаётся</td><td class="me">ролики продолжают набирать</td></tr>
+          <tr><td>Через пару месяцев</td><td>о вас не вспомнят</td><td>пишут те, кто видел ролики</td><td class="me">пишут те, кто смотрел вас месяцами</td></tr>
+          <tr><td>Доверие к вам</td><td>не растёт</td><td>растёт</td><td class="me">растёт: лицо и голос ваши</td></tr>
+          <tr><td>Форматы</td><td>—</td><td>на вкус подрядчика</td><td class="me">по роликам, которые уже залетели</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="rib alt" aria-hidden="true"><div class="row">
+  <span>Цены октября</span><span>Скидка до 31.10</span><span>+5 роликов при оплате сразу</span><span>Цены октября</span><span>Скидка до 31.10</span><span>+5 роликов при оплате сразу</span>
+  <span>Цены октября</span><span>Скидка до 31.10</span><span>+5 роликов при оплате сразу</span><span>Цены октября</span><span>Скидка до 31.10</span><span>+5 роликов при оплате сразу</span>
+</div></div>
+
+<section id="price" data-bg="#1a0f14">
+  <div class="wrap rv">
+    <div class="eyebrow">Тарифы</div>
+    <h2>Месяц роликов <em>без единой съёмки</em></h2>
+    <div class="deadline"><i></i>цены октября действуют до 31.10</div>
+    <div class="prices">
+      <div class="pc">
+        <div class="k">Старт</div>
+        <div class="what">7 роликов · тест</div>
+        <div class="old">590 $</div>
+        <div class="sum">350 $</div>
+        <div class="loc">≈ 30 000 ₽ · ≈ 1 040 BYN</div>
+        <ul><li>Анализ ниши и доноров</li><li>Аватар и клон голоса</li><li>Сценарии на согласование</li><li>Монтаж 7 роликов</li></ul>
+        <div class="per">срок <b>14 дней</b> · засчитывается в «Поток»</div>
+      </div>
+      <div class="pc best">
+        <span class="hit">ВЫБИРАЮТ</span>
+        <div class="k">Поток</div>
+        <div class="what">25 роликов в месяц</div>
+        <div class="sub">ролики идут потоком: по 6 каждую неделю</div>
+        <div class="old">1 300 $</div>
+        <div class="sum">1 000 $</div>
+        <div class="loc">≈ 85 000 ₽ · ≈ 2 970 BYN</div>
+        <div class="bonus">+5 роликов при оплате месяца сразу</div>
+        <ul><li>Всё из «Старта»</li><li>Монтаж пачками по 6 роликов в неделю</li><li>Автоворонка: кодовое слово → директ</li><li>Контент готов к выкладке, публикуете вы</li></ul>
+        <div class="per">выдача <b>каждую неделю</b></div>
+      </div>
+      <div class="pc">
+        <div class="k">Макс</div>
+        <div class="what">30 роликов в месяц</div>
+        <div class="old">1 800 $</div>
+        <div class="sum">1 400 $</div>
+        <div class="loc">≈ 120 000 ₽ · ≈ 4 160 BYN</div>
+        <div class="bonus">+5 роликов при оплате месяца сразу</div>
+        <ul><li>Всё из «Потока»</li><li>8 каруселей в месяц</li><li>Сценарии сторис на неделю</li><li>Оформление профиля под воронку</li><li>Выкладка в TikTok и YouTube Shorts</li></ul>
+        <div class="per">ролики <b>+ карусели + сторис</b></div>
+      </div>
+    </div>
+    <div class="terms">
+      <div><b>По договору</b><span>фиксируем объём, сроки и правки</span></div>
+      <div><b>Оплата 50/50</b><span>или сразу за месяц: +5 роликов</span></div>
+      <div><b>2 правки</b><span>на каждый сценарий и каждый ролик</span></div>
+    </div>
+    <p class="note">Рубли и белорусские рубли указаны примерно, по курсу на октябрь 2026. Оплата в удобной валюте.</p>
+    <div class="extra">
+      <div class="extra-h">Отдельные услуги</div>
+      <div class="ex-row"><span>ИИ-аватар + клон голоса</span><i></i><b>200 $</b></div>
+      <div class="ex-row"><span>Генерация фотосессии</span><i></i><b>от 100 $</b></div>
+      <div class="ex-row"><span>Ролик-генерация: реклама, объект по фото</span><i></i><b>от 60 $</b></div>
+      <div class="ex-row"><span>Сценарий + монтаж из ваших исходников</span><i></i><b>по задаче</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="calc" data-bg="#1a0f14">
+  <div class="wrap rv">
+    <div class="eyebrow">Окупаемость</div>
+    <h2>Посчитайте, сколько обращений <em>окупят работу</em></h2>
+    <p class="lead">Без обещаний и «гарантий дохода». Подставьте свои цифры и решите сами, реально ли это для вас.</p>
+    <div class="calc">
+      <div class="cin">
+        <label for="cIncome">Ваш доход с одной сделки, ₽</label>
+        <input id="cIncome" type="number" inputmode="numeric" min="1000" step="1000" value="150000">
+        <label for="cLeads">Сколько обращений уходит на одну сделку</label>
+        <input id="cLeads" type="number" inputmode="numeric" min="1" step="1" value="10">
+        <label for="cPlan">Тариф</label>
+        <select id="cPlan">
+          <option value="30000|7 роликов">Старт · 30 000 ₽ · 7 роликов</option>
+          <option value="85000|25 роликов" selected>Поток · 85 000 ₽ · 25 роликов в месяц</option>
+          <option value="120000|30 роликов">Макс · 120 000 ₽ · 30 роликов в месяц</option>
+        </select>
+      </div>
+      <div class="cout" aria-live="polite">
+        <div class="cbig"><b id="cDeals">1</b><span>сделка окупает работу</span></div>
+        <div class="cbig"><b id="cNeed">10</b><span>обращений для этого нужно</span></div>
+        <p class="cq" id="cText">Если с <b>25 роликов</b> придёт <b>10 обращений</b>, работа окупится. Это реально для вашей ниши?</p>
+        <a class="btn" id="cCall" href="https://t.me/byenech" target="_blank" rel="noopener">Посчитать точно на созвоне →</a>
+        <p class="cnote">Это обратный расчёт, а не прогноз. На созвоне сверим с вашими цифрами: откуда сейчас клиенты, сколько обращений, какой чек.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="go" data-bg="#1a0f14" style="padding-top:0">
+  <div class="wrap rv go">
+    <b>Готовы обсудить?</b>
+    <div class="cta-row" style="margin-top:0">
+      <a class="btn" href="https://t.me/byenech?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%BE%D0%B7%D0%B2%D0%BE%D0%BD%20%D0%BD%D0%B0%2015%20%D0%BC%D0%B8%D0%BD%D1%83%D1%82" target="_blank" rel="noopener">Записаться на созвон →</a>
+      <a class="btn ghost" href="#contact">Сначала разбор аккаунта</a>
+    </div>
+  </div>
+</section>
+
 <section id="fit" data-bg="#121114">
   <div class="wrap rv">
     <div class="eyebrow">Честно</div>
@@ -834,6 +869,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <details><summary>Гарантируете заявки?</summary><p>Нет, и тех, кто гарантирует, стоит опасаться. Я отвечаю за то, что контролирую: объём, сроки, форматы по данным, воронку и отчёты. Сколько обращений окупят работу, вы считаете сами в калькуляторе выше.</p></details>
       <details><summary>Почему дороже, чем монтажёр?</summary><p>Монтажёр монтирует то, что вы сняли. Здесь не нужно сниматься, а ещё анализ ниши, сценарии по вирусным форматам, аватар, голос, воронка и отчётность.</p></details>
       <details><summary>Можно начать с малого?</summary><p>Да: «Старт» на 7 роликов или отдельные услуги. Стоимость «Старта» засчитывается, если перейдёте на «Поток».</p></details>
+      <details><summary>Instagram не банит ИИ-контент?</summary><p>Нет. Ролик с вашим собственным аватаром и голосом — обычный контент: вы автор и сами дали свой образ. Проблемы бывают у тех, кто делает двойников чужих людей без разрешения.</p></details>
+      <details><summary>Нужно ли помечать, что это ИИ?</summary><p>Instagram просит отмечать реалистичные ИИ-видео, это одна галочка «Информация об ИИ» при публикации. Это пометка, а не бан: ролик показывается как обычно. Подскажу, где её включить.</p></details>
+      <details><summary>Что будет с аватаром, когда закончим?</summary><p>Пока работаем, все сервисы на мне и входят в стоимость. Ролики, сценарии и воронка остаются у вас. Если захотите и дальше делать ролики с аватаром, подписку на сервис оплачиваете со своего аккаунта. Это по желанию: без неё уже готовые ролики никуда не денутся.</p></details>
+      <details><summary>Автоответ в директ платный?</summary><p>Настраиваю его в ChatPlace. На старте хватает бесплатного тарифа: до 200 человек в месяц. Когда обращений станет больше, понадобится платный тариф сервиса, его оплачиваете напрямую.</p></details>
+      <details><summary>Можно ролики на двух языках?</summary><p>Да. Клон голоса говорит и на других языках вашим тембром: можно вести контент на русском и английском или сделать версии роликов под другую аудиторию.</p></details>
+      <details><summary>Сколько правок?</summary><p>2 правки на каждый сценарий и 2 на каждый готовый ролик. Работаю по договору, оплата 50/50 или сразу за месяц с бонусом +5 роликов.</p></details>
     </div>
   </div>
 </section>
@@ -874,6 +915,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <script>
 document.documentElement.classList.add('js');
+// личное приветствие по ссылке ...?n=Анна
+{const n=(new URLSearchParams(location.search).get('n')||'').trim().slice(0,30);
+  if(n){const hi=document.getElementById('hi');hi.textContent=n+', здравствуйте! Здесь всё: как это работает и сколько стоит ↓';hi.hidden=false}}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.18});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 // смена тона фона по разделам
@@ -914,11 +958,6 @@ const startDance=()=>{stage.classList.add('on');dancer.play().catch(()=>{});fab.
 const setSongUI=on=>{music.textContent=on?'❚❚ выключить музыку':'♪ включить музыку';music.classList.toggle('playing',on);fab.textContent=on?'🐾 🔊 выключить':'🐾 ♪ музыка';fab.classList.toggle('on',on)};
 const toggleSong=()=>{if(song.paused){dancer.currentTime=0;song.currentTime=0;song.play().then(()=>{dancer.play();setSongUI(true)}).catch(()=>{music.textContent='звук недоступен'})}else{song.pause();setSongUI(false)}};
 fab.addEventListener('click',toggleSong);
-// скалолаз лезет по столбику по мере прокрутки
-const climber=document.getElementById('climber'),chartEl=document.querySelector('.chart');
-function climb(){const r=chartEl.getBoundingClientRect();let c=(innerHeight*.95-r.top)/(innerHeight*.7);c=Math.max(0,Math.min(1,c));climber.style.setProperty('--cy',c.toFixed(3));
-  if(r.top<innerHeight&&r.bottom>0){if(climber.paused)climber.play().catch(()=>{})}else if(!climber.paused)climber.pause()}
-addEventListener('scroll',climb,{passive:true});climb();
 new IntersectionObserver((es,o)=>es.forEach(e=>{if(!e.isIntersecting)return;o.disconnect();
   guard.classList.add('left');stage.classList.add('drop');
   if(reduce)startDance();else setTimeout(startDance,1900)}),{threshold:.45}).observe(stage);
@@ -942,7 +981,7 @@ function calc(){
 }
 [cI,cL,cP].forEach(e=>e.addEventListener('input',calc));calc();
 // скрины кейсов: открыть крупно
-document.querySelectorAll('.ab figure').forEach(fg=>fg.addEventListener('click',()=>{const lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');const im=document.createElement('img');im.src=fg.querySelector('img').src;im.alt=fg.querySelector('img').alt;lb.appendChild(im);lb.addEventListener('click',()=>lb.remove());document.addEventListener('keydown',function k(e){if(e.key==='Escape'){lb.remove();document.removeEventListener('keydown',k)}});document.body.appendChild(lb)}));
+document.querySelectorAll('.ab figure, .shot').forEach(fg=>fg.addEventListener('click',()=>{const lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');const im=document.createElement('img');im.src=fg.querySelector('img').src;im.alt=fg.querySelector('img').alt;lb.appendChild(im);lb.addEventListener('click',()=>lb.remove());document.addEventListener('keydown',function k(e){if(e.key==='Escape'){lb.remove();document.removeEventListener('keydown',k)}});document.body.appendChild(lb)}));
 // подсветка тарифов
 document.querySelectorAll('.pc').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--px',(e.clientX-r.left)+'px');c.style.setProperty('--py',(e.clientY-r.top)+'px')}));
 // заявка в телеграм
