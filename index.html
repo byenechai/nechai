@@ -383,20 +383,24 @@ h2 em{font-style:normal;color:var(--wine)}
 .case{border:1px solid var(--line);border-radius:24px;padding:24px;background:var(--ink2);min-width:0;display:flex;flex-direction:column;gap:18px}
 .case-h b{display:block;font-family:var(--f-disp);font-size:22px;letter-spacing:-.03em}
 .case-h span{font-size:14px;color:var(--mute)}
-.ab{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
+.ab{display:grid;grid-template-columns:1fr;justify-items:stretch;gap:6px}
 .ab figure{margin:0;position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff}
 .ab figure.after{border-color:rgba(184,53,77,.7);box-shadow:0 0 24px var(--glow)}
 .ab img{display:block;width:100%;height:auto}
 .ab figcaption{position:absolute;left:6px;top:6px;font:700 10px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;background:rgba(18,17,20,.85);color:var(--bone);padding:3px 7px;border-radius:999px}
 .ab .after figcaption{background:var(--wine);color:#fff}
-.ab .arrow{color:var(--wine);font-weight:800;font-size:20px}
+.ab .arrow{color:var(--wine);font-weight:800;font-size:20px;text-align:center;line-height:1;transform:rotate(90deg)}
+.ab figure{cursor:zoom-in}
+.ab figcaption{font-size:11px;padding:4px 9px}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(10,9,11,.92);display:flex;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+.lb img{max-width:min(1100px,100%);max-height:90vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .nums div{border-radius:14px;background:rgba(184,53,77,.08);border:1px solid rgba(184,53,77,.25);padding:12px}
 .nums b{display:block;font-family:var(--f-disp);font-size:clamp(20px,2.2vw,26px);letter-spacing:-.04em;color:var(--pink);font-variant-numeric:tabular-nums}
 .nums span{display:block;font-size:12.5px;color:var(--mute);margin-top:4px;line-height:1.35}
 .case-p{margin:0;font-size:14px;color:#cfc9c1}
 @media (max-width:900px){.cases{grid-template-columns:1fr}}
-@media (max-width:420px){.nums{grid-template-columns:1fr}.ab{grid-template-columns:1fr}.ab .arrow{display:none}}
+@media (max-width:420px){.nums{grid-template-columns:1fr}}
 /* котик-охранник на карточке */
 .guard{position:relative}
 .sleeper{position:absolute;z-index:6;width:46%;max-width:170px;right:6%;top:0;transform:translateY(-72%);pointer-events:none;transform-origin:50% 100%;animation:breathe 3.2s ease-in-out infinite;height:auto;aspect-ratio:360/172;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5));transition:opacity .4s}
@@ -927,6 +931,8 @@ function calc(){
   document.getElementById('cCall').href='https://t.me/byenech?text='+encodeURIComponent('Здравствуйте! Посчитал окупаемость: доход со сделки '+fmt(inc)+' ₽, '+per+' обращений на сделку, тариф '+cP.options[cP.selectedIndex].text.split(' · ')[0]+'. Хочу обсудить на созвоне.');
 }
 [cI,cL,cP].forEach(e=>e.addEventListener('input',calc));calc();
+// скрины кейсов: открыть крупно
+document.querySelectorAll('.ab figure').forEach(fg=>fg.addEventListener('click',()=>{const lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');const im=document.createElement('img');im.src=fg.querySelector('img').src;im.alt=fg.querySelector('img').alt;lb.appendChild(im);lb.addEventListener('click',()=>lb.remove());document.addEventListener('keydown',function k(e){if(e.key==='Escape'){lb.remove();document.removeEventListener('keydown',k)}});document.body.appendChild(lb)}));
 // подсветка тарифов
 document.querySelectorAll('.pc').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--px',(e.clientX-r.left)+'px');c.style.setProperty('--py',(e.clientY-r.top)+'px')}));
 // заявка в телеграм
